@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c asm.s
+SOURCEFILES_QUOTED_IF_SPACED=main.c mylib_xc16.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/asm.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/asm.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mylib_xc16.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mylib_xc16.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/asm.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mylib_xc16.o
 
 # Source Files
-SOURCEFILES=main.c asm.s
+SOURCEFILES=main.c mylib_xc16.s
 
 
 CFLAGS=
@@ -102,20 +102,20 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/asm.o: asm.s  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/mylib_xc16.o: mylib_xc16.s  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/asm.o.d 
-	@${RM} ${OBJECTDIR}/asm.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  asm.s  -o ${OBJECTDIR}/asm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -legacy-libc  -Wa,-MD,"${OBJECTDIR}/asm.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)
-	@${FIXDEPS} "${OBJECTDIR}/asm.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/mylib_xc16.o.d 
+	@${RM} ${OBJECTDIR}/mylib_xc16.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  mylib_xc16.s  -o ${OBJECTDIR}/mylib_xc16.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -legacy-libc  -Wa,-MD,"${OBJECTDIR}/mylib_xc16.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)
+	@${FIXDEPS} "${OBJECTDIR}/mylib_xc16.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/asm.o: asm.s  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/mylib_xc16.o: mylib_xc16.s  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/asm.o.d 
-	@${RM} ${OBJECTDIR}/asm.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  asm.s  -o ${OBJECTDIR}/asm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -legacy-libc  -Wa,-MD,"${OBJECTDIR}/asm.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)
-	@${FIXDEPS} "${OBJECTDIR}/asm.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/mylib_xc16.o.d 
+	@${RM} ${OBJECTDIR}/mylib_xc16.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  mylib_xc16.s  -o ${OBJECTDIR}/mylib_xc16.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -legacy-libc  -Wa,-MD,"${OBJECTDIR}/mylib_xc16.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)
+	@${FIXDEPS} "${OBJECTDIR}/mylib_xc16.o.d"  $(SILENT)  -rsi ${MP_CC_DIR}../  
 	
 endif
 

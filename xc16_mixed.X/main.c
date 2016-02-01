@@ -7,7 +7,7 @@
 
 
 #include "xc.h"
-#include "main.h"
+#include "mylib.h"
 
 int main(void) {
     signed int num0 = 100, num1 = 200;
