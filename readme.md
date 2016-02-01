@@ -4,4 +4,4 @@ The purpose of this repository is to inform those who wish to write assembly rou
 
 Having said that, before you go writing a ton of assembly code for C, read the compiler documentation!  Otherwise, you may write assembly code that will interfere with your compiler-generated code!
 
-Visit www.forembed.com to read more about this process.
+Visit http://www.forembed.com/xc16-writing-assembly-for-use-in-c/ to read more about this process.
