@@ -14,6 +14,8 @@ int main(void) {
     
     signed int result = add(num0, num1);
     
+    num0 = subtract(result, num1);
+    
     while(1);   // infinite loop
     
     return 0;

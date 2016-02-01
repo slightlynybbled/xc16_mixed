@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c mylib_xc16.s
+SOURCEFILES_QUOTED_IF_SPACED=main.c mylib_xc16.s mylib.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mylib_xc16.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mylib_xc16.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mylib_xc16.o ${OBJECTDIR}/mylib.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mylib_xc16.o.d ${OBJECTDIR}/mylib.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mylib_xc16.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mylib_xc16.o ${OBJECTDIR}/mylib.o
 
 # Source Files
-SOURCEFILES=main.c mylib_xc16.s
+SOURCEFILES=main.c mylib_xc16.s mylib.c
 
 
 CFLAGS=
@@ -89,6 +89,13 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -legacy-libc  -O0 -msmart-io=1 -Wall -msfr-warn=on  
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/mylib.o: mylib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mylib.o.d 
+	@${RM} ${OBJECTDIR}/mylib.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mylib.c  -o ${OBJECTDIR}/mylib.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mylib.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1    -omf=elf -legacy-libc  -O0 -msmart-io=1 -Wall -msfr-warn=on  
+	@${FIXDEPS} "${OBJECTDIR}/mylib.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -96,6 +103,13 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"        -g -omf=elf -legacy-libc  -O0 -msmart-io=1 -Wall -msfr-warn=on  
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/mylib.o: mylib.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mylib.o.d 
+	@${RM} ${OBJECTDIR}/mylib.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mylib.c  -o ${OBJECTDIR}/mylib.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mylib.o.d"        -g -omf=elf -legacy-libc  -O0 -msmart-io=1 -Wall -msfr-warn=on  
+	@${FIXDEPS} "${OBJECTDIR}/mylib.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

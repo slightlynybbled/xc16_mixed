@@ -7,6 +7,7 @@ extern "C" {
 #endif /* __cplusplus */
 
 signed int add(signed int addend, signed int adder);
+signed int subtract(signed int num, signed int numToSubtract);
     
 #ifdef	__cplusplus
 }
